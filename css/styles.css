@@ -1,38 +1,38 @@
 :root {
-    /* Premium Dark Theme variables */
-    --app-bg: #0D1117;
-    --app-card: #161B22;
-    --app-border: #30363D;
-    --text-primary: #E6EDF3;
-    --text-secondary: #8B949E;
-    --status-completed: #238636;
-    --status-skipped: #DA3633;
-    --status-in-progress: #1F6FEB;
-    --status-overdue: #D29922;
+	/* Premium Dark Theme variables */
+	--app-bg: #0D1117;
+	--app-card: #161B22;
+	--app-border: #30363D;
+	--text-primary: #E6EDF3;
+	--text-secondary: #8B949E;
+	--status-completed: #238636;
+	--status-skipped: #DA3633;
+	--status-in-progress: #1F6FEB;
+	--status-overdue: #D29922;
 }
 
 :root.light-mode {
-    /* Crisp Light Theme variables */
-    --app-bg: #F6F8FA;
-    --app-card: #FFFFFF;
-    --app-border: #D0D7DE;
-    --text-primary: #24292F;
-    --text-secondary: #57606A;
-    --status-completed: #1A7F37;
-    --status-skipped: #CF222E;
-    --status-in-progress: #0969DA;
-    --status-overdue: #9A6700;
+	/* Crisp Light Theme variables */
+	--app-bg: #F6F8FA;
+	--app-card: #FFFFFF;
+	--app-border: #D0D7DE;
+	--text-primary: #24292F;
+	--text-secondary: #57606A;
+	--status-completed: #1A7F37;
+	--status-skipped: #CF222E;
+	--status-in-progress: #0969DA;
+	--status-overdue: #9A6700;
 }
 
 /* Fluid transitions for modern aesthetic */
 body, .card, .button, .badge, header, footer, svg, p, h1, h2, h3, li, span, input, div, button {
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 body { 
-    font-family: 'Inter', sans-serif; 
-    background-color: var(--app-bg);
-    color: var(--text-primary);
+	font-family: 'Inter', sans-serif; 
+	background-color: var(--app-bg);
+	color: var(--text-primary);
 }
 
 /* Custom Scrollbars */
@@ -43,299 +43,505 @@ body {
 
 /* Centered container for ultrawide screen optimization */
 .container {
-    max-width: 80rem; /* 1280px / max-w-7xl */
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    padding: 1rem;
+	max-width: 80rem; /* 1280px / max-w-7xl */
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding: 1rem;
 }
 @media (min-width: 768px) {
-    .container { padding: 1.5rem; }
+	.container { padding: 1.5rem; }
 }
 @media (min-width: 1024px) {
-    .container { padding: 2rem; }
+	.container { padding: 2rem; }
 }
 
 /* Core structure grids */
 .main-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
 }
 @media (min-width: 1024px) {
-    .main-layout {
-        grid-template-columns: 2fr 1fr;
-    }
+	.main-layout {
+		grid-template-columns: 2fr 1fr;
+	}
 }
 
 .content, .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 /* Component Standards: Cards */
 .card {
-    background-color: var(--app-card);
-    border: 1px solid var(--app-border);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    position: relative;
+	background-color: var(--app-card);
+	border: 1px solid var(--app-border);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	position: relative;
 }
 .card--highlight {
-    overflow: hidden;
+	overflow: hidden;
 }
 .card--highlight::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background-color: var(--status-in-progress);
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	background-color: var(--status-in-progress);
 }
 .card--highlight-overdue {
-    overflow: hidden;
+	overflow: hidden;
 }
 .card--highlight-overdue::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background-color: var(--status-overdue);
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	background-color: var(--status-overdue);
 }
 .card--interactive:hover {
-    border-color: var(--text-secondary);
+	border-color: var(--text-secondary);
 }
 
 /* Component Standards: Buttons */
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-weight: 500;
+	font-size: 0.875rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.75rem;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	border: 1px solid transparent;
 }
 .button--primary {
-    background-color: var(--status-in-progress);
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(31, 111, 235, 0.2);
+	background-color: var(--status-in-progress);
+	color: #ffffff;
+	box-shadow: 0 4px 12px rgba(31, 111, 235, 0.2);
 }
 .button--primary:hover {
-    filter: brightness(1.1);
+	filter: brightness(1.1);
 }
 .button--secondary {
-    background-color: transparent;
-    border-color: var(--app-border);
-    color: var(--text-secondary);
+	background-color: transparent;
+	border-color: var(--app-border);
+	color: var(--text-secondary);
 }
 .button--secondary:hover {
-    border-color: var(--text-primary);
-    color: var(--text-primary);
-    background-color: rgba(139, 148, 158, 0.05);
+	border-color: var(--text-primary);
+	color: var(--text-primary);
+	background-color: rgba(139, 148, 158, 0.05);
 }
 .button--success {
-    background-color: var(--status-completed);
-    color: #ffffff;
+	background-color: var(--status-completed);
+	color: #ffffff;
 }
 .button--success:hover {
-    filter: brightness(1.15);
+	filter: brightness(1.15);
 }
 .button--danger {
-    background-color: var(--status-skipped);
-    color: #ffffff;
+	background-color: var(--status-skipped);
+	color: #ffffff;
 }
 .button--danger:hover {
-    filter: brightness(1.15);
+	filter: brightness(1.15);
 }
 .button--outline-warning {
-    background-color: transparent;
-    border-color: var(--status-overdue);
-    color: var(--status-overdue);
+	background-color: transparent;
+	border-color: var(--status-overdue);
+	color: var(--status-overdue);
 }
 .button--outline-warning:hover {
-    background-color: rgba(210, 153, 34, 0.1);
+	background-color: rgba(210, 153, 34, 0.1);
 }
 .button--small {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.5rem;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	border-radius: 0.5rem;
 }
 .button--large {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-size: 1rem;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.75rem;
+	font-size: 1rem;
 }
 .button:disabled, .button.is-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 /* Component Standards: Badges */
 .badge {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    white-space: nowrap;
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.75rem;
+	font-weight: 600;
+	padding: 0.25rem 0.5rem;
+	border-radius: 9999px;
+	white-space: nowrap;
 }
 .badge--success {
-    background-color: rgba(35, 134, 54, 0.15);
-    color: var(--status-completed);
-    border: 1px solid rgba(35, 134, 54, 0.3);
+	background-color: rgba(35, 134, 54, 0.15);
+	color: var(--status-completed);
+	border: 1px solid rgba(35, 134, 54, 0.3);
 }
 .badge--warning {
-    background-color: rgba(210, 153, 34, 0.15);
-    color: var(--status-overdue);
-    border: 1px solid rgba(210, 153, 34, 0.3);
+	background-color: rgba(210, 153, 34, 0.15);
+	color: var(--status-overdue);
+	border: 1px solid rgba(210, 153, 34, 0.3);
 }
 .badge--danger {
-    background-color: rgba(218, 54, 51, 0.15);
-    color: var(--status-skipped);
-    border: 1px solid rgba(218, 54, 51, 0.3);
+	background-color: rgba(218, 54, 51, 0.15);
+	color: var(--status-skipped);
+	border: 1px solid rgba(218, 54, 51, 0.3);
 }
 .badge--info {
-    background-color: rgba(31, 111, 235, 0.15);
-    color: var(--status-in-progress);
-    border: 1px solid rgba(31, 111, 235, 0.3);
+	background-color: rgba(31, 111, 235, 0.15);
+	color: var(--status-in-progress);
+	border: 1px solid rgba(31, 111, 235, 0.3);
 }
 .badge--neutral {
-    background-color: rgba(139, 148, 158, 0.15);
-    color: var(--text-secondary);
-    border: 1px solid rgba(139, 148, 158, 0.3);
+	background-color: rgba(139, 148, 158, 0.15);
+	color: var(--text-secondary);
+	border: 1px solid rgba(139, 148, 158, 0.3);
 }
 
 /* Component Standards: Timelines */
 .timeline-item {
-    display: flex;
-    gap: 1rem;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--app-border);
-    background-color: var(--app-bg);
-    transition: all 0.2s ease;
+	display: flex;
+	gap: 1rem;
+	padding: 0.75rem;
+	border-radius: 0.75rem;
+	border: 1px solid var(--app-border);
+	background-color: var(--app-bg);
+	transition: all 0.2s ease;
 }
 .timeline-item--completed {
-    border-color: rgba(35, 134, 54, 0.25);
+	border-color: rgba(35, 134, 54, 0.25);
 }
 .timeline-item--skipped {
-    border-color: rgba(218, 54, 51, 0.25);
+	border-color: rgba(218, 54, 51, 0.25);
 }
 .timeline-item--in-progress {
-    border-color: var(--status-in-progress);
-    background-color: rgba(31, 111, 235, 0.05);
+	border-color: var(--status-in-progress);
+	background-color: rgba(31, 111, 235, 0.05);
 }
 .timeline-item--overdue {
-    border-color: rgba(210, 153, 34, 0.3);
+	border-color: rgba(210, 153, 34, 0.3);
 }
 .timeline-item--upcoming {
-    border-color: var(--app-border);
-    opacity: 0.85;
+	border-color: var(--app-border);
+	opacity: 0.85;
 }
 
 .timeline-item__dot {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: var(--app-border);
-    margin-top: 0.25rem;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
+	width: 0.75rem;
+	height: 0.75rem;
+	border-radius: 50%;
+	background-color: var(--app-border);
+	margin-top: 0.25rem;
+	flex-shrink: 0;
+	transition: all 0.2s ease;
 }
 .timeline-item--completed .timeline-item__dot {
-    background-color: var(--status-completed);
+	background-color: var(--status-completed);
 }
 .timeline-item--skipped .timeline-item__dot {
-    background-color: var(--status-skipped);
+	background-color: var(--status-skipped);
 }
 .timeline-item--in-progress .timeline-item__dot {
-    background-color: var(--status-in-progress);
-    box-shadow: 0 0 8px var(--status-in-progress);
+	background-color: var(--status-in-progress);
+	box-shadow: 0 0 8px var(--status-in-progress);
 }
 .timeline-item--overdue .timeline-item__dot {
-    background-color: var(--status-overdue);
+	background-color: var(--status-overdue);
 }
 
 /* Navigation Toggles */
 .tab-btn {
-    border-bottom: 2px solid transparent;
-    color: var(--text-secondary);
+	border-bottom: 2px solid transparent;
+	color: var(--text-secondary);
 }
 .tab-btn.is-active {
-    border-color: var(--status-in-progress);
-    color: var(--text-primary);
-    font-weight: 600;
+	border-color: var(--status-in-progress);
+	color: var(--text-primary);
+	font-weight: 600;
 }
 
 .progress-fill { transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
 .toast {
-    background: rgba(22, 27, 34, 0.95);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--app-border);
+	background: rgba(22, 27, 34, 0.95);
+	backdrop-filter: blur(8px);
+	border: 1px solid var(--app-border);
 }
 :root.light-mode .toast {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--text-primary);
+	background: rgba(255, 255, 255, 0.95);
+	color: var(--text-primary);
 }
 
 /* Calendar grid cell specifications */
 .calendar-cell {
-    aspect-ratio: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.35rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    position: relative;
+	aspect-ratio: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.35rem;
+	border-radius: 0.5rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	position: relative;
 }
 .calendar-cell--inactive {
-    color: rgba(139, 148, 158, 0.25);
-    cursor: not-allowed;
+	color: rgba(139, 148, 158, 0.25);
+	cursor: not-allowed;
 }
 .calendar-cell--active {
-    border: 1px solid var(--app-border);
-    cursor: pointer;
+	border: 1px solid var(--app-border);
+	cursor: pointer;
 }
 .calendar-cell--active:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 10;
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	z-index: 10;
 }
 .calendar-cell--current {
-    outline: 2.5px solid var(--status-in-progress);
-    outline-offset: 1px;
+	outline: 2.5px solid var(--status-in-progress);
+	outline-offset: 1px;
 }
 .calendar-tooltip {
-    visibility: hidden;
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.95);
-    color: #fff;
-    padding: 0.35rem 0.6rem;
-    border-radius: 0.35rem;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    z-index: 50;
-    pointer-events: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+	visibility: hidden;
+	position: absolute;
+	bottom: 110%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.95);
+	color: #fff;
+	padding: 0.35rem 0.6rem;
+	border-radius: 0.35rem;
+	font-size: 0.75rem;
+	white-space: nowrap;
+	z-index: 50;
+	pointer-events: none;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 .calendar-cell--active:hover .calendar-tooltip {
-    visibility: visible;
+	visibility: visible;
+}
+
+/*
+@keyframes waterFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    color: #eab308;
+    filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.4));
+  }
+  50% {
+    color: #facc15;
+    filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.8)) 
+            drop-shadow(0 0 20px rgba(234, 179, 8, 0.4));
+  }
+}
+*/
+
+/* Water flow text with SVG grain overlay */
+/*.water-flow-text {
+  position: relative;
+  background: linear-gradient(
+    120deg, 
+    #000000 0%, 
+    #0969da 25%, 
+    #000000 50%, 
+    #0969da 75%, 
+    #000000 100%
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waterFlow 8s ease-in-out infinite;
+}
+*/
+
+/* SVG grain effect mapped directly into the text bounds */
+/*
+.water-flow-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+*
+/
+
+/* Lightning bolt styling */
+/*
+.lightning-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
+  will-change: filter, color;
+}
+*/
+
+/* Container uses 'currentColor' so your light/dark mode framework controls the text */
+.text-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: currentColor;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light grain overlay that adapts to dark/light backgrounds automatically */
+.text-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Base class for all moving energy elements */
+.energy-orb {
+  position: absolute;
+  background: #facc15;  /* Vibrant yellow */
+  border-radius: 50%;
+  mix-blend-mode: screen; 
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 10px Main Orb (Slower movement) */
+.main-orb {
+  width: 10px;
+  height: 10px;
+  filter: blur(2px);
+  animation: mainOrbJourney 11s linear infinite;
+}
+
+/* Hyper-Fast Sparks (Sizes ranging 3px - 5px for visual variety) */
+.spark-1 { width: 4px; height: 4px; filter: blur(1px); animation: spark1Journey 11s linear infinite; }
+.spark-2 { width: 5px; height: 5px; filter: blur(1px); animation: spark2Journey 11s linear infinite; }
+.spark-3 { width: 3px; height: 3px; filter: blur(0.5px); animation: spark3Journey 11s linear infinite; }
+.spark-4 { width: 4px; height: 4px; filter: blur(1px); animation: spark4Journey 11s linear infinite; }
+
+/* Lightning Bolt Core Animation - Defaulting to your specific blue */
+.lightning-bolt {
+  color: #0969da; 
+  will-change: filter, color;
+  animation: multiStrikeEngine 11s linear infinite;
+}
+
+/* --- DETAILED TIMELINE SEQUENCING (11s Total Loop) --- */
+
+/* Main Big Orb: Moves at a steady, heavy pace, hitting at 50% */
+@keyframes mainOrbJourney {
+  0% { left: 105%; top: 30%; opacity: 0; }
+  15% { opacity: 1; }
+  25% { left: 70%; top: 75%; }
+  40% { left: 35%; top: 20%; }
+  50% { left: 0%; top: 50%; opacity: 1; } /* Hit 5: Main Charge */
+  53% { left: -5%; top: 50%; opacity: 0; }
+  54%, 100% { left: -5%; opacity: 0; }
+}
+
+/* Spark 1: Immediate hyper sprint */
+@keyframes spark1Journey {
+  0% { left: 105%; top: 20%; opacity: 1; }
+  8% { left: 50%; top: 60%; }
+  14% { left: 0%; top: 50%; opacity: 1; }  /* Hit 1: Rapid shock */
+  16% { left: -5%; top: 50%; opacity: 0; }
+  17%, 100% { left: -5%; opacity: 0; }
+}
+
+/* Spark 2: Enters quickly right behind Spark 1 */
+@keyframes spark2Journey {
+  0%, 8% { left: 105%; top: 80%; opacity: 0; }
+  9% { opacity: 1; }
+  18% { left: 60%; top: 25%; }
+  24% { left: 0%; top: 50%; opacity: 1; }  /* Hit 2: Rapid shock */
+  26% { left: -5%; top: 50%; opacity: 0; }
+  27%, 100% { left: -5%; opacity: 0; }
+}
+
+/* Spark 3: Super short window, flies near the top path */
+@keyframes spark3Journey {
+  0%, 18% { left: 105%; top: 15%; opacity: 0; }
+  19% { opacity: 1; }
+  26% { left: 45%; top: 40%; }
+  32% { left: 0%; top: 50%; opacity: 1; }  /* Hit 3: Rapid shock */
+  34% { left: -5%; top: 50%; opacity: 0; }
+  35%, 100% { left: -5%; opacity: 0; }
+}
+
+/* Spark 4: The final fast shock right before the big wave hits */
+@keyframes spark4Journey {
+  0%, 28% { left: 105%; top: 70%; opacity: 0; }
+  29% { opacity: 1; }
+  35% { left: 55%; top: 85%; }
+  41% { left: 0%; top: 50%; opacity: 1; }  /* Hit 4: Rapid shock */
+  43% { left: -5%; top: 50%; opacity: 0; }
+  44%, 100% { left: -5%; opacity: 0; }
+}
+
+/* Central Orchestrator: Filter drop-shadows are strictly restricted to the Main Big Orb section */
+@keyframes multiStrikeEngine {
+  0%, 13% { color: #0969da; filter: drop-shadow(0 0 0px transparent); }
+  
+  /* --- SHOCK 1 (Spark 1): Pure, sharp color swap with no blur/glow --- */
+  14% { color: #eab308; filter: none; }
+  17% { color: #0969da; filter: none; }
+  17.1%, 23% { color: #0969da; }
+  
+  /* --- SHOCK 2 (Spark 2): Pure, sharp color swap with no blur/glow --- */
+  24% { color: #eab308; filter: none; }
+  27% { color: #0969da; filter: none; }
+  27.1%, 31% { color: #0969da; }
+  
+  /* --- SHOCK 3 (Spark 3): Pure, sharp color swap with no blur/glow --- */
+  32% { color: #eab308; filter: none; }
+  35% { color: #0969da; filter: none; }
+  35.1%, 40% { color: #0969da; }
+  
+  /* --- SHOCK 4 (Spark 4): Pure, sharp color swap with no blur/glow --- */
+  41% { color: #eab308; filter: none; }
+  44% { color: #0969da; filter: none; }
+  44.1%, 49% { color: #0969da; }
+  
+  /* --- SUSTAINED HIGH-VOLTAGE GLOW (Main Big Orb Only) --- */
+  /* This activates the drop shadow glow and softening right on impact */
+  50% { color: #eab308; filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.95)); }
+  63% { color: #facc15; filter: drop-shadow(0 0 16px rgba(234, 179, 8, 0.95)) drop-shadow(0 0 25px rgba(234, 179, 8, 0.4)); }
+  
+  /* --- COOL DOWN & SYSTEM REST --- */
+  70% { color: #0969da; filter: drop-shadow(0 0 4px rgba(9, 105, 218, 0.3)); }
+  75%, 100% { color: #0969da; filter: drop-shadow(0 0 0px transparent); }
 }
