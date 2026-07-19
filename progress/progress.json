@@ -10,7 +10,8 @@
       "implementation": "completed",
       "break": "completed",
       "applications": "completed",
-      "revision": "completed"
+      "revision": "completed",
+      "interview": "completed"
     }
   },
   "mastered_whiteboard": [
@@ -22,10 +23,10 @@
     "Embeddings"
   ],
   "overall_stats": {
-    "completedTasks": 14,
+    "completedTasks": 15,
     "skippedTasks": 0,
     "whiteboardCompleted": 1,
     "revisionCompleted": 3
   },
-  "exportedAt": "2026-07-19T15:56:59.867Z"
+  "exportedAt": "2026-07-19T16:07:35.258Z"
 }
