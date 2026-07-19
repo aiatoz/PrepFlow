@@ -406,142 +406,131 @@ body {
 }
 */
 
-/* Container uses 'currentColor' so your light/dark mode framework controls the text */
-.text-container {
+
+
+
+
+
+
+
+
+/* Custom Canvas: Adapts perfectly across dark and light themes without edge bleeding */
+.text-clip-canvas {
   position: relative;
   display: inline-block;
-  overflow: hidden;
-  background: currentColor;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: currentColor; /* Inherits your system's light/dark text color seamlessly */
+  
+  /* Modern CSS Mask Layer: Destroys the rectangular bounding box artifacts */
+  -webkit-mask-image: linear-gradient(#000, #000);
+  mask-image: linear-gradient(#000, #000);
+  -webkit-mask-clip: text;
+  mask-clip: text;
 }
 
-/* Light grain overlay that adapts to dark/light backgrounds automatically */
-.text-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.12;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Base class for all moving energy elements */
+/* Base properties for every moving electric component */
 .energy-orb {
   position: absolute;
-  background: #facc15;  /* Vibrant yellow */
+  background: #facc15; /* High-visibility yellow */
   border-radius: 50%;
-  mix-blend-mode: screen; 
-  z-index: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* 10px Main Orb (Slower movement) */
+/* 10px Primary Main Orb */
 .main-orb {
-  width: 10px;
-  height: 10px;
-  filter: blur(2px);
+  width: 8px;
+  height: 8px;
   animation: mainOrbJourney 11s linear infinite;
 }
 
-/* Hyper-Fast Sparks (Sizes ranging 3px - 5px for visual variety) */
-.spark-1 { width: 4px; height: 4px; filter: blur(1px); animation: spark1Journey 11s linear infinite; }
-.spark-2 { width: 5px; height: 5px; filter: blur(1px); animation: spark2Journey 11s linear infinite; }
-.spark-3 { width: 3px; height: 3px; filter: blur(0.5px); animation: spark3Journey 11s linear infinite; }
-.spark-4 { width: 4px; height: 4px; filter: blur(1px); animation: spark4Journey 11s linear infinite; }
+/* Micro Electrical Sparks */
+.spark-1 { width: 4px; height: 4px; animation: spark1Journey 11s linear infinite; }
+.spark-2 { width: 5px; height: 5px; animation: spark2Journey 11s linear infinite; }
+.spark-3 { width: 3px; height: 3px; animation: spark3Journey 11s linear infinite; }
+.spark-4 { width: 4px; height: 4px; animation: spark4Journey 11s linear infinite; }
 
-/* Lightning Bolt Core Animation - Defaulting to your specific blue */
+/* Lightning Node: Fixed blue base color state */
 .lightning-bolt {
-  color: #0969da; 
+  color: #0969da;
   will-change: filter, color;
   animation: multiStrikeEngine 11s linear infinite;
 }
 
-/* --- DETAILED TIMELINE SEQUENCING (11s Total Loop) --- */
+/* --- MOTION & IMPACT TIMELINES (11s Loop Frequency) --- */
 
-/* Main Big Orb: Moves at a steady, heavy pace, hitting at 50% */
 @keyframes mainOrbJourney {
   0% { left: 105%; top: 30%; opacity: 0; }
   15% { opacity: 1; }
-  25% { left: 70%; top: 75%; }
-  40% { left: 35%; top: 20%; }
-  50% { left: 0%; top: 50%; opacity: 1; } /* Hit 5: Main Charge */
-  53% { left: -5%; top: 50%; opacity: 0; }
-  54%, 100% { left: -5%; opacity: 0; }
+  25% { left: 70%; top: 65%; }
+  40% { left: 35%; top: 25%; }
+  50% { left: 0%; top: 50%; opacity: 1; } /* Climax Hit */
+  52% { left: -10%; top: 50%; opacity: 0; }
+  53%, 100% { left: -10%; opacity: 0; }
 }
 
-/* Spark 1: Immediate hyper sprint */
 @keyframes spark1Journey {
   0% { left: 105%; top: 20%; opacity: 1; }
   8% { left: 50%; top: 60%; }
-  14% { left: 0%; top: 50%; opacity: 1; }  /* Hit 1: Rapid shock */
-  16% { left: -5%; top: 50%; opacity: 0; }
-  17%, 100% { left: -5%; opacity: 0; }
+  14% { left: 0%; top: 50%; opacity: 1; }  /* Hit 1 */
+  16% { left: -10%; top: 50%; opacity: 0; }
+  17%, 100% { left: -10%; opacity: 0; }
 }
 
-/* Spark 2: Enters quickly right behind Spark 1 */
 @keyframes spark2Journey {
-  0%, 8% { left: 105%; top: 80%; opacity: 0; }
+  0%, 8% { left: 105%; top: 75%; opacity: 0; }
   9% { opacity: 1; }
-  18% { left: 60%; top: 25%; }
-  24% { left: 0%; top: 50%; opacity: 1; }  /* Hit 2: Rapid shock */
-  26% { left: -5%; top: 50%; opacity: 0; }
-  27%, 100% { left: -5%; opacity: 0; }
+  18% { left: 60%; top: 30%; }
+  24% { left: 0%; top: 50%; opacity: 1; }  /* Hit 2 */
+  26% { left: -10%; top: 50%; opacity: 0; }
+  27%, 100% { left: -10%; opacity: 0; }
 }
 
-/* Spark 3: Super short window, flies near the top path */
 @keyframes spark3Journey {
   0%, 18% { left: 105%; top: 15%; opacity: 0; }
   19% { opacity: 1; }
-  26% { left: 45%; top: 40%; }
-  32% { left: 0%; top: 50%; opacity: 1; }  /* Hit 3: Rapid shock */
-  34% { left: -5%; top: 50%; opacity: 0; }
-  35%, 100% { left: -5%; opacity: 0; }
+  26% { left: 45%; top: 45%; }
+  32% { left: 0%; top: 50%; opacity: 1; }  /* Hit 3 */
+  34% { left: -10%; top: 50%; opacity: 0; }
+  35%, 100% { left: -10%; opacity: 0; }
 }
 
-/* Spark 4: The final fast shock right before the big wave hits */
 @keyframes spark4Journey {
-  0%, 28% { left: 105%; top: 70%; opacity: 0; }
+  0%, 28% { left: 105%; top: 65%; opacity: 0; }
   29% { opacity: 1; }
-  35% { left: 55%; top: 85%; }
-  41% { left: 0%; top: 50%; opacity: 1; }  /* Hit 4: Rapid shock */
-  43% { left: -5%; top: 50%; opacity: 0; }
-  44%, 100% { left: -5%; opacity: 0; }
+  35% { left: 55%; top: 80%; }
+  41% { left: 0%; top: 50%; opacity: 1; }  /* Hit 4 */
+  43% { left: -10%; top: 50%; opacity: 0; }
+  44%, 100% { left: -10%; opacity: 0; }
 }
 
-/* Central Orchestrator: Filter drop-shadows are strictly restricted to the Main Big Orb section */
 @keyframes multiStrikeEngine {
   0%, 13% { color: #0969da; filter: drop-shadow(0 0 0px transparent); }
   
-  /* --- SHOCK 1 (Spark 1): Pure, sharp color swap with no blur/glow --- */
+  /* Sharp Shock 1 (Spark 1) */
   14% { color: #eab308; filter: none; }
   17% { color: #0969da; filter: none; }
   17.1%, 23% { color: #0969da; }
   
-  /* --- SHOCK 2 (Spark 2): Pure, sharp color swap with no blur/glow --- */
+  /* Sharp Shock 2 (Spark 2) */
   24% { color: #eab308; filter: none; }
   27% { color: #0969da; filter: none; }
   27.1%, 31% { color: #0969da; }
   
-  /* --- SHOCK 3 (Spark 3): Pure, sharp color swap with no blur/glow --- */
+  /* Sharp Shock 3 (Spark 3) */
   32% { color: #eab308; filter: none; }
   35% { color: #0969da; filter: none; }
   35.1%, 40% { color: #0969da; }
   
-  /* --- SHOCK 4 (Spark 4): Pure, sharp color swap with no blur/glow --- */
+  /* Sharp Shock 4 (Spark 4) */
   41% { color: #eab308; filter: none; }
   44% { color: #0969da; filter: none; }
   44.1%, 49% { color: #0969da; }
   
-  /* --- SUSTAINED HIGH-VOLTAGE GLOW (Main Big Orb Only) --- */
-  /* This activates the drop shadow glow and softening right on impact */
+  /* Heavy Volumetric Glow (Main Big Orb Only) */
   50% { color: #eab308; filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.95)); }
   63% { color: #facc15; filter: drop-shadow(0 0 16px rgba(234, 179, 8, 0.95)) drop-shadow(0 0 25px rgba(234, 179, 8, 0.4)); }
   
-  /* --- COOL DOWN & SYSTEM REST --- */
+  /* Complete Engine Rest Phase */
   70% { color: #0969da; filter: drop-shadow(0 0 4px rgba(9, 105, 218, 0.3)); }
   75%, 100% { color: #0969da; filter: drop-shadow(0 0 0px transparent); }
 }
