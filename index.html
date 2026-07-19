@@ -52,13 +52,38 @@
         
             <!-- Header elements -->
             <header class="header flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-appBorder pb-4 gap-4">
-                <div class="flex flex-col gap-1">
-                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-textPrimary flex items-center gap-2">
+                
+				
+				<div class="flex flex-col gap-1">
+                    <!--<h1 class="text-2xl md:text-3xl font-bold tracking-tight text-textPrimary flex items-center gap-2">
                         <svg class="w-8 h-8 text-statusInProgress" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         PrepFlow
-                    </h1>
+                    </h1>-->
+					
+					<!--Lightning bolt and gradient flow-->
+					<h1 class="text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-2 select-none relative text-current">
+						<!-- Glowing Lightning Bolt -->
+						<svg class="w-8 h-8 lightning-bolt" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://w3.org">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+						
+						<!-- Text Container that uses your theme's native color -->
+						<span class="text-container">
+							PrepFlow
+							<!-- Energy Grid: 1 Main Orb + 4 Hyper Sparks -->
+							<span class="energy-orb main-orb"></span>
+							<span class="energy-orb spark-1"></span>
+							<span class="energy-orb spark-2"></span>
+							<span class="energy-orb spark-3"></span>
+							<span class="energy-orb spark-4"></span>
+						</span>
+					</h1>
+
+					
                     <p id="header-date" class="header-date text-textSecondary text-sm md:text-base font-medium">Auto-detecting date...</p>
                 </div>
+				
+				
                 <div class="flex items-center gap-3">
                     <!-- Light / Dark Theme Button -->
                     <button id="theme-toggle-btn" class="button button--secondary button--small p-2.5" title="Toggle Light/Dark Theme">
