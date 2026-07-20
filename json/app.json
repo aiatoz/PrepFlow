@@ -2,8 +2,8 @@
   "name": "PrepFlow",
   "version": "v1",
   "startDate": "2026-07-19",
-  "endDate": "2026-08-01",
-  "totalDays": 14,
+  "endDate": "2026-07-31",
+  "totalDays": 13,
   "objective": "AI/ML Placement Preparation",
   "targetCompanies": [
     "Microsoft",
