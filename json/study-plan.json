@@ -36,6 +36,28 @@
   },
   "2": {
     "dsa": {
+      "topic": "Skip This",
+      "questions": [
+        "Skip This"
+      ]
+    },
+    "paper": "Skip This",
+    "dbms": [],
+    "libraries": [
+      "Skip This"
+    ],
+    "mlops": [],
+    "implementation": [
+      "Skip This"
+    ],
+    "application": "Skip This",
+    "revision": [
+      "Skip This"
+    ],
+    "interview": []
+  },
+  "3": {
+    "dsa": {
       "topic": "Two Pointers",
       "questions": [
         "Valid Palindrome",
@@ -66,7 +88,7 @@
     ],
     "interview": []
   },
-  "3": {
+  "4": {
     "dsa": {
       "topic": "Sliding Window",
       "questions": [
@@ -95,7 +117,7 @@
     ],
     "interview": []
   },
-  "4": {
+  "5": {
     "dsa": {
       "topic": "Stack & Queue",
       "questions": [
@@ -124,7 +146,7 @@
     ],
     "interview": []
   },
-  "5": {
+  "6": {
     "dsa": {
       "topic": "Binary Search",
       "questions": [
@@ -152,7 +174,7 @@
     ],
     "interview": []
   },
-  "6": {
+  "7": {
     "dsa": {
       "topic": "Linked List",
       "questions": []
@@ -176,7 +198,7 @@
     ],
     "interview": []
   },
-  "7": {
+  "8": {
     "dsa": {
       "topic": "Trees / DFS / BFS",
       "questions": []
@@ -198,7 +220,7 @@
     ],
     "interview": []
   },
-  "8": {
+  "9": {
     "dsa": {
       "topic": "BST & Heap",
       "questions": []
@@ -221,7 +243,7 @@
     ],
     "interview": []
   },
-  "9": {
+  "10": {
     "dsa": {
       "topic": "Graphs / BFS / DFS / Union Find",
       "questions": []
@@ -244,7 +266,7 @@
     ],
     "interview": []
   },
-  "10": {
+  "11": {
     "dsa": {
       "topic": "Backtracking",
       "questions": []
@@ -268,7 +290,7 @@
     ],
     "interview": []
   },
-  "11": {
+  "12": {
     "dsa": {
       "topic": "Dynamic Programming I",
       "questions": []
@@ -291,7 +313,7 @@
     ],
     "interview": []
   },
-  "12": {
+  "13": {
     "dsa": {
       "topic": "Dynamic Programming II",
       "questions": []
@@ -314,7 +336,7 @@
     ],
     "interview": []
   },
-  "13": {
+  "14": {
     "dsa": {
       "topic": "Mock Coding Interview",
       "questions": [
