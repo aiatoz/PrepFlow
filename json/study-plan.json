@@ -1,13 +1,11 @@
 {
   "1": {
     "dsa": {
-      "topic": "Arrays & Hash Maps",
+      "topic": "Arrays & Hashing",
       "questions": [
         "Two Sum",
-        "Contains Duplicate",
-        "Product of Array Except Self",
-        "Top K Frequent Elements",
-        "Encode and Decode Strings"
+        "Valid Anagram",
+        "Contains Duplicate"
       ]
     },
     "paper": "Continue paper corrections.",
@@ -36,12 +34,11 @@
   },
   "2": {
     "dsa": {
-      "topic": "Two Pointers",
+      "topic": "Arrays & Hashing",
       "questions": [
-        "Valid Palindrome",
-        "Container With Most Water",
-        "3 Sum",
-        "Trapping Rain Water"
+        "Group Anagrams",
+        "Top K Frequent Elements",
+        "Product of Array Except Self"
       ]
     },
     "paper": "Continue paper corrections.",
@@ -68,11 +65,11 @@
   },
   "3": {
     "dsa": {
-      "topic": "Sliding Window",
+      "topic": "Two Pointers",
       "questions": [
-        "Longest Substring Without Repeating Characters",
-        "Longest Repeating Character Replacement",
-        "Minimum Window Substring"
+        "Valid Palindrome",
+        "Two Sum II",
+        "Container With Most Water"
       ]
     },
     "paper": "Continue paper corrections.",
@@ -97,11 +94,11 @@
   },
   "4": {
     "dsa": {
-      "topic": "Stack & Queue",
+      "topic": "Sliding Window & Stack",
       "questions": [
+        "Longest Substring Without Repeating Characters",
         "Valid Parentheses",
-        "Min Stack",
-        "Daily Temperatures"
+        "Min Stack"
       ]
     },
     "paper": "Continue paper corrections.",
@@ -130,7 +127,7 @@
       "questions": [
         "Binary Search",
         "Search in Rotated Sorted Array",
-        "Median of Two Sorted Arrays"
+        "Find Minimum in Rotated Sorted Array"
       ]
     },
     "paper": "Continue paper corrections.",
@@ -154,8 +151,12 @@
   },
   "6": {
     "dsa": {
-      "topic": "Linked List",
-      "questions": []
+      "topic": "Linked Lists",
+      "questions": [
+        "Reverse Linked List",
+        "Linked List Cycle",
+        "Merge Two Sorted Lists"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [],
@@ -178,8 +179,12 @@
   },
   "7": {
     "dsa": {
-      "topic": "Trees / DFS / BFS",
-      "questions": []
+      "topic": "Trees (DFS)",
+      "questions": [
+        "Maximum Depth of Binary Tree",
+        "Invert Binary Tree",
+        "Same Tree"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [
@@ -200,8 +205,12 @@
   },
   "8": {
     "dsa": {
-      "topic": "BST & Heap",
-      "questions": []
+      "topic": "Trees (BFS)",
+      "questions": [
+        "Binary Tree Level Order Traversal",
+        "Validate BST",
+        "Lowest Common Ancestor (Understand the approach)"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [],
@@ -223,8 +232,12 @@
   },
   "9": {
     "dsa": {
-      "topic": "Graphs / BFS / DFS / Union Find",
-      "questions": []
+      "topic": "Heaps / Priority Queue",
+      "questions": [
+        "Kth Largest Element in an Array",
+        "Top K Frequent Elements (Heap Solution)",
+        "Last Stone Weight"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [
@@ -246,8 +259,12 @@
   },
   "10": {
     "dsa": {
-      "topic": "Backtracking",
-      "questions": []
+      "topic": "Graphs (Grid DFS/BFS)",
+      "questions": [
+        "Number of Islands",
+        "Max Area of Island",
+        "Flood Fill"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [],
@@ -270,8 +287,12 @@
   },
   "11": {
     "dsa": {
-      "topic": "Dynamic Programming I",
-      "questions": []
+      "topic": "Graphs",
+      "questions": [
+        "Rotting Oranges",
+        "Clone Graph",
+        "Course Schedule (Optional if time permits)"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [],
@@ -293,8 +314,12 @@
   },
   "12": {
     "dsa": {
-      "topic": "Dynamic Programming II",
-      "questions": []
+      "topic": "Dynamic Programming",
+      "questions": [
+        "Climbing Stairs",
+        "House Robber",
+        "Coin Change"
+      ]
     },
     "paper": "Continue paper corrections.",
     "dbms": [],
